@@ -2,9 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: "main" # O "master" si tu rama principal se llama así
+    branches: ["main"]
+  workflow_dispatch:
 
-# Permisos necesarios para Pages
 permissions:
   contents: read
   pages: write
@@ -18,7 +18,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps: deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,13 +37,12 @@ jobs:
         run: npm run build
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Figma/Vite suelen compilar en la carpeta 'dist' o 'build'
-          path: './dist' 
+          path: './dist' # Si al compilar en tu compu te genera 'build', cambia 'dist' por 'build'
 
       - name: Deploy to GitHub Pages
         id: deployment
