@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Github, Linkedin, Download, Send, ChevronRight } from "lucide-react";
-
+import miCV from "./assets/cv-minmyn.pdf";
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const profile = {
@@ -157,13 +157,16 @@ export default function App() {
               <Send className="w-4 h-4" />
               Contactar
             </a>
-            <button
-              onClick={() => alert("Agrega aquí el enlace a tu CV en PDF.")}
+
+            {/* 👇 REEMPLAZA EL ANTIGUO BUTTON POR ESTA ETIQUETA 'A' */}
+            <a
+              href={miCV}
+              download="CV_Monica_Velazquez.pdf"
               className="inline-flex items-center gap-2 px-5 py-2.5 border border-[rgba(0,0,0,0.18)] text-sm font-medium rounded-sm hover:bg-[#f5f5f5] transition-colors"
             >
               <Download className="w-4 h-4" />
               Descargar CV
-            </button>
+            </a>
           </div>
         </div>
       </header>
