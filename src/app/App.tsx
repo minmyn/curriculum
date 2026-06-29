@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Github, Linkedin, Download, Send, ChevronRight } from "lucide-react";
-import miCV from "./assets/cv-minmyn.pdf";
+import miCV from "../assets/cv-minmyn.pdf";
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const profile = {
