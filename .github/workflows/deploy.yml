@@ -32,11 +32,10 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: 22 # Actualizado a Node 22 para quitar el warning molesto
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile # Obliga a instalar aunque no haya archivo lock
 
       - name: Build
         run: pnpm run build
