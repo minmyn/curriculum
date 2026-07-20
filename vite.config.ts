@@ -18,7 +18,7 @@ function figmaAssetResolver() {
 export default defineConfig({
   // ¡ESTA ES LA LÍNEA QUE LE AÑADIMOS! 
   // Le dice a Vite que prepare los links para la subcarpeta de GitHub
-  base: '/CurrCulumVitaeWeb/', 
+  base: '/curriculum/', 
 
   plugins: [
     figmaAssetResolver(),
